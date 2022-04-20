@@ -1,0 +1,39 @@
+﻿<Window x:Class="Chess.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Chess"
+        mc:Ignorable="d"
+        Title="Chess. Karen Mastoyan" Height="465" Width="916" ResizeMode="CanMinimize" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <StackPanel>
+            <TextBlock Name="box4" Height="50" Width="400" Foreground="Black" FontSize="40" FontFamily="Sylfaen" FontWeight="Light" HorizontalAlignment="Right" Margin="0,10,20,0"/>
+            <TextBlock Name="box3" Height="50" Width="400" Foreground="Black" FontSize="40" FontFamily="Sylfaen" FontWeight="Light" HorizontalAlignment="Right"  Margin="0,10,20,0"/>
+            <TextBlock Name="box2" Height="50" Width="400" Foreground="Black" FontSize="40" FontFamily="Sylfaen" FontWeight="Light" HorizontalAlignment="Right" Margin="0,10,20,0"/>
+
+            <ComboBox Height="25" Width="275" Name="CB1"  HorizontalAlignment="Right" Margin="0,10,20,0">
+                <ComboBoxItem >Minimax,MFF(Recursive)</ComboBoxItem>
+                <ComboBoxItem >Minimax,MFF(Non-recursive)</ComboBoxItem>
+                <ComboBoxItem IsSelected="True">Minimax,MFF(Alpha-beta pruning(Recursive))</ComboBoxItem>
+                <ComboBoxItem >Minimax,MFF(Alpha-beta pruning(Non-recursive))</ComboBoxItem>
+            </ComboBox>
+            <ComboBox Height="25" Width="200" Name="CB2" HorizontalAlignment="Right" Margin="0,10,20,0">
+                <ComboBoxItem >1</ComboBoxItem>
+                <ComboBoxItem >2</ComboBoxItem>
+                <ComboBoxItem IsSelected="True">3</ComboBoxItem>
+                <ComboBoxItem>4</ComboBoxItem>
+                <ComboBoxItem>5</ComboBoxItem>
+                <ComboBoxItem>6</ComboBoxItem>
+            </ComboBox>
+            <Button Click="Reset_Board" HorizontalAlignment="Right" Margin="0,30,165,0">Reset Board(New Game)</Button>
+        </StackPanel>
+        <TextBlock HorizontalAlignment="Right" Width="100" Margin="0,190,301.6,221" >AI algorithm</TextBlock>
+        <TextBlock HorizontalAlignment="Right" Width="100" Margin="0,233,301.6,175">Depth</TextBlock>
+        <Image Name="MyBoard" Source="wpf_chess/board.jpg" HorizontalAlignment="Left" Width="432" Height="432" VerticalAlignment="Top"/>
+        <Grid Name="BoardGrid" Width="432" Height="432" VerticalAlignment="Top" HorizontalAlignment="Left"></Grid>
+
+    </Grid>
+
+</Window>
